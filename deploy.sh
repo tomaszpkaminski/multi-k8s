@@ -7,7 +7,7 @@ docker push tomaszpkaminski/multi-server:latest
 docker push tomaszpkaminski/multi-server:$GIT_SHA
 docker push tomaszpkaminski/multi-worker:latest
 docker push tomaszpkaminski/multi-worker:$GIT_SHA
-kubctl apply -f k8s
-kubctl set image deployments/server-deployment  server=tomaszpkaminski/multi-server:$GIT_SHA
-kubctl set image deployments/client-deployment  client=tomaszpkaminski/multi-client:$GIT_SHA
-kubctl set image deployments/worker-deployment  worker=tomaszpkaminski/multi-worker:$GIT_SHA
+kubectl apply -f k8s
+kubectl set image deployments/server-deployment  server=tomaszpkaminski/multi-server:$GIT_SHA
+kubectl set image deployments/client-deployment  client=tomaszpkaminski/multi-client:$GIT_SHA
+kubectl set image deployments/worker-deployment  worker=tomaszpkaminski/multi-worker:$GIT_SHA
